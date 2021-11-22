@@ -16,7 +16,7 @@ int main()
     printf("2-Ajouter plusieurs clients\n");
     printf("3-Affichier la liste des clients\n");
     printf("4-Rechercher un client\n");
-    printf("5-Fidélisation \n");
+    printf("5-Fidelisation \n");
     printf("6-EXIT\n");
     printf("Saisez le choix : ");
     scanf("%d", &choix);
@@ -25,15 +25,15 @@ int main()
     switch (choix)
     {
     case 1:{
-        printf("entrer le numero du CIN : ");
+        printf("saisissez le numero du CIN : ");
         scanf("%s", &CIN);
 
-        printf("entrer le NOM : ");
+        printf("Saisissez le NOM : ");
         scanf("%s", &nom);
-        printf("entrer le Prenom : ");
+        printf("Saisissez le Prenom : ");
         scanf("%s", &prenom);
 
-        printf("entrer le Montant initial : ");
+        printf("Saisissez le Montant initial : ");
         scanf("%f", &montant);
         system("cls");
             goto menu;
@@ -41,18 +41,18 @@ int main()
     }
         break;
     case 2 :{
-        printf("Saisez combien engistrer : ");
+        printf("Saisissez combien engistrer : ");
         scanf("%d", &nombre);
         for(i = 0; i < nombre; i++){
-            printf("entrer le numero du CIN : ");
+            printf("Saisissez le numero du CIN : ");
         scanf("%s", &CIN);
 
-        printf("entrer le NOM : ");
+        printf("Saisissez le NOM : ");
         scanf("%s", &nom);
-        printf("entrer le Prenom : ");
+        printf("Saisissez le Prenom : ");
         scanf("%s", &prenom);
 
-        printf("entrer le Montant initial : ");
+        printf("Saisissez le Montant initial : ");
         scanf("%f", &montant);
         system("cls");
         }
@@ -69,8 +69,8 @@ int main()
     case '5'/* constant-expression */:
         /* code */
         break;   
-    case '6'/* constant-expression */:
-        /* code */
+    case 6 : 
+    printf("vous avez quitter le programme");
         break;   
 
     default:

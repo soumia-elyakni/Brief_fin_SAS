@@ -11,18 +11,18 @@ int main()
     int i, nombre;
  
  menu :
- printf("Saisez combien engistrer : ");
+ printf("Saisissez combien engistrer : ");
  scanf("%d", &nombre);
  for(i = 0; i < nombre; i++){
-    printf("entrer le numero du CIN : ");
+    printf("Saisissez le numero du CIN : ");
    scanf("%s", &CIN);
 
-   printf("entrer le NOM : ");
+   printf("Saisissez le NOM : ");
    scanf("%s", &nom);
-   printf("entrer le Prenom : ");
+   printf("Saisissez le Prenom : ");
    scanf("%s", &prenom);
 
-   printf("entrer le Montant initial : ");
+   printf("Saisissez le Montant initial : ");
    scanf("%f", &montant);
    system("cls");
  }

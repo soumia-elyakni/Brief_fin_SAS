@@ -1,16 +1,46 @@
 #include<stdio.h>
 #include<stdlib.h>
-int main()
-{
-    printf("Bienvenue sur le systeme bancaire");
-    
+#include <string.h>
+#include <windows.h>
+
+void ajouteruncmpte(){
+
     char CIN[9] ;
     char nom[30] ;
     char prenom[30] ;
-    float montant;
-    int i, nombre;
-    int choix;
+    float montant; 
 
+        printf("saisissez le numero du CIN : ");
+        scanf("%s", &CIN);
+
+        printf("Saisissez le NOM : ");
+        scanf("%s", &nom);
+        printf("Saisissez le Prenom : ");
+        scanf("%s", &prenom);
+
+        printf("Saisissez le Montant initial : ");
+        scanf("%f", &montant);
+}
+
+void ajouterdescmptes(){
+
+    
+    int i, nombre;
+
+        printf("Saisissez combien engistrer : ");
+        scanf("%d", &nombre);
+        for(i = 0; i < nombre; i++){
+             ajouteruncmpte();
+        }
+        system("cls");
+}
+
+void menu(){
+
+ int choix; 
+
+ printf("Bienvenue sur le systeme bancaire");
+    
     menu :
     printf("1-Ajouter un client\n");
     printf("2-Ajouter plusieurs clients\n");
@@ -24,50 +54,31 @@ int main()
 
     switch (choix)
     {
-    case 1:{
-        printf("saisissez le numero du CIN : ");
-        scanf("%s", &CIN);
-
-        printf("Saisissez le NOM : ");
-        scanf("%s", &nom);
-        printf("Saisissez le Prenom : ");
-        scanf("%s", &prenom);
-
-        printf("Saisissez le Montant initial : ");
-        scanf("%f", &montant);
-        system("cls");
-            goto menu;
-        
-    }
-        break;
-    case 2 :{
-        printf("Saisissez combien engistrer : ");
-        scanf("%d", &nombre);
-        for(i = 0; i < nombre; i++){
-            printf("Saisissez le numero du CIN : ");
-        scanf("%s", &CIN);
-
-        printf("Saisissez le NOM : ");
-        scanf("%s", &nom);
-        printf("Saisissez le Prenom : ");
-        scanf("%s", &prenom);
-
-        printf("Saisissez le Montant initial : ");
-        scanf("%f", &montant);
-        system("cls");
-        }
+    case 1:
+             ajouteruncmpte();
             system("cls");
             goto menu;
-    }
         break;
-    case '3'/* constant-expression */:
-        /* code */
+
+    case 2 :
+             ajouterdescmptes();
+           system("cls");
+            goto menu;
         break;
-    case '4'/* constant-expression */:
-        /* code */
+    case 3 :
+    // listeclients.c / fonctions affichage;
+        break;
+    case 4 :
+    // fonction de recherche;
+     //infos de client +  printf("Quelle operations voulez-vous effectuer ?");
+        // printf("1-retrait"); 
+        // printf("2-depot"); 
+        // scanf("%d, choix retrait depot ");
+        // fonction d'operation;
+
         break;    
-    case '5'/* constant-expression */:
-        /* code */
+    case 5 : 
+        // fonction fidélisation
         break;   
     case 6 : 
     printf("vous avez quitter le programme");
@@ -77,5 +88,12 @@ int main()
         goto menu;
         break;
     }
+    
+
+}
+
+int main()
+{
+   void menu ();
     return 0;
 }

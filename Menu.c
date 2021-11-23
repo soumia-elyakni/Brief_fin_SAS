@@ -10,7 +10,7 @@ struct info_client{
   float montant;
  };
 
- struct info_client Client;
+ struct info_client Client[100];
  void ajouteruncmpte(){
 
 

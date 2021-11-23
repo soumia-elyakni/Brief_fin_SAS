@@ -17,13 +17,7 @@ int choix2;
    
    printf("2- Affichage par ordre Deccendant: \n");
 
-   printf("La liste des clients ayant un Montant superieur de 1000 MAD \n");
-
-   printf("3- Affichage par ordre Accendant \n");
-   
-   printf("4- Affichage par ordre Deccendant \n");
-
-   printf("5- Rechercher un client \n");
+   printf("3- Rechercher un client \n");
 
    scanf("%d", &choix2);
 
@@ -42,12 +36,7 @@ int choix2;
         printf("jnjkfg");
         break;
 
-        case 4: 
-        printf("huhfr");
-        break;
-
-        case 5: 
-        printf("jfd");
+        
         /*printf("saisissez le CIN du client");
         scanf("%s", &CIN);
         // fonction d recherche 

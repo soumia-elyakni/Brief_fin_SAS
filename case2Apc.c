@@ -1,4 +1,4 @@
-#include <stdio.h>
+#include<stdio.h>
 #include<stdlib.h>
 
 
@@ -10,24 +10,29 @@ int main()
     float montant;
     int i, nombre;
  
- menu :
- printf("Saisissez combien engistrer : ");
+//  step :
+ printf("Saisez combien engistrer : ");
  scanf("%d", &nombre);
  for(i = 0; i < nombre; i++){
-    printf("Saisissez le numero du CIN : ");
+    printf("entrer le numero du CIN : ");
    scanf("%s", &CIN);
 
-   printf("Saisissez le NOM : ");
+   printf("entrer le NOM : ");
    scanf("%s", &nom);
-   printf("Saisissez le Prenom : ");
+   printf("entrer le Prenom : ");
    scanf("%s", &prenom);
 
-   printf("Saisissez le Montant initial : ");
+   printf("entrer le Montant initial : ");
    scanf("%f", &montant);
-   system("cls");
  }
-     system("cls");
-     goto menu;
+
+//    printf("encore un client ?");
+//    printf("0-Menu");
+//    printf("1-Oui");
+//    scanf("%d", &encore);
+
+//   while(encore != 0){
+    // goto step;
     return 0;
 
 }

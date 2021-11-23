@@ -3,41 +3,54 @@
 #include <string.h>
 #include <windows.h>
 
-void ajouteruncmpte(){
+struct info_client{
+  char CIN[9];
+  char nom[30];
+  char prenom[30];
+  float montant;
+ };
 
-    char CIN[9] ;
-    char nom[30] ;
-    char prenom[30] ;
-    float montant; 
+ struct info_client Client;
+ void ajouteruncmpte(){
+
 
         printf("saisissez le numero du CIN : ");
-        scanf("%s", &CIN);
+        scanf("%s", Client.CIN);
 
         printf("Saisissez le NOM : ");
-        scanf("%s", &nom);
+        scanf("%s", Client.nom);
         printf("Saisissez le Prenom : ");
-        scanf("%s", &prenom);
+        scanf("%s", Client.prenom);
 
         printf("Saisissez le Montant initial : ");
-        scanf("%f", &montant);
+        scanf("%f", &Client.montant);
+
 }
 
 void ajouterdescmptes(){
-
-    
-    int i, nombre;
+         int i, nombre ;
 
         printf("Saisissez combien engistrer : ");
         scanf("%d", &nombre);
         for(i = 0; i < nombre; i++){
-             ajouteruncmpte();
-        }
+             printf("saisissez le numero du CIN : ");
+        scanf("%s", Client.CIN);
+
+        printf("Saisissez le NOM : ");
+        scanf("%s", Client.nom);
+        printf("Saisissez le Prenom : ");
+        scanf("%s", Client.prenom);
+
+        printf("Saisissez le Montant initial : ");
+        scanf("%f", &Client.montant);
         system("cls");
+        }
+         
 }
 
-void menu(){
-
- int choix; 
+int main(){
+ 
+int choix;
 
  printf("Bienvenue sur le systeme bancaire");
     
@@ -65,6 +78,7 @@ void menu(){
            system("cls");
             goto menu;
         break;
+
     case 3 :
     // listeclients.c / fonctions affichage;
         break;
@@ -88,12 +102,7 @@ void menu(){
         goto menu;
         break;
     }
+
     
-
-}
-
-int main()
-{
-   void menu ();
     return 0;
 }

@@ -11,7 +11,7 @@ struct info_client{
  };
 
  struct info_client Client;
- 
+
  void ajouteruncmpte(){
 
 
@@ -53,7 +53,7 @@ int main(){
  
 int choix;
 
- printf("Bienvenue sur le systeme bancaire");
+ printf("*******************Bienvenue sur le systeme bancaire******************** \n");
     
     menu :
     printf("1-Ajouter un client\n");

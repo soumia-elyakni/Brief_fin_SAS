@@ -10,52 +10,52 @@ struct info_client{
   float montant;
  };
 
- struct info_client Client;
+struct info_client datab[100];
+int i = 0;
+
 
  void ajouteruncmpte(){
 
+        char CIN[9];
+        char nom[30];
+        char prenom[30];
+        float montant;
 
         printf("saisissez le numero du CIN : ");
-        scanf("%s", Client.CIN);
+        scanf("%s", datab[i].CIN);
 
         printf("Saisissez le NOM : ");
-        scanf("%s", Client.nom);
+        scanf("%s", datab[i].nom);
         printf("Saisissez le Prenom : ");
-        scanf("%s", Client.prenom);
+        scanf("%s", datab[i].prenom);
 
         printf("Saisissez le Montant initial : ");
-        scanf("%f", &Client.montant);
+        scanf("%f", &datab[i].montant);
 
-}
-
+        i++;
+ }
+    
 void ajouterdescmptes(){
          int i, nombre ;
 
         printf("Saisissez combien engistrer : ");
         scanf("%d", &nombre);
         for(i = 0; i < nombre; i++){
-             printf("saisissez le numero du CIN : ");
-        scanf("%s", Client.CIN);
-
-        printf("Saisissez le NOM : ");
-        scanf("%s", Client.nom);
-        printf("Saisissez le Prenom : ");
-        scanf("%s", Client.prenom);
-
-        printf("Saisissez le Montant initial : ");
-        scanf("%f", &Client.montant);
-        system("cls");
+            ajouteruncmpte();
+            system("cls");
         }
          
 }
+ 
 
 int main(){
  
 int choix;
 
+menu :
+
  printf("*******************Bienvenue sur le systeme bancaire******************** \n");
     
-    menu :
     printf("1-Ajouter un client\n");
     printf("2-Ajouter plusieurs clients\n");
     printf("3-Affichier la liste des clients\n");

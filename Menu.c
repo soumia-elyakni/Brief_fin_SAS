@@ -16,22 +16,20 @@ int i = 0;
 
  void ajouteruncmpte(){
 
-        char CIN[9];
-        char nom[30];
-        char prenom[30];
-        float montant;
+         struct info_client Clt ;
 
         printf("saisissez le numero du CIN : ");
-        scanf("%s", datab[i].CIN);
+        scanf("%s", Clt.CIN);
 
         printf("Saisissez le NOM : ");
-        scanf("%s", datab[i].nom);
+        scanf("%s", Clt.nom);
         printf("Saisissez le Prenom : ");
-        scanf("%s", datab[i].prenom);
+        scanf("%s", Clt.prenom);
 
         printf("Saisissez le Montant initial : ");
-        scanf("%f", &datab[i].montant);
+        scanf("%f", &Clt.montant);
 
+        datab[i] = Clt ;
         i++;
  }
     
@@ -45,6 +43,15 @@ void ajouterdescmptes(){
             system("cls");
         }
          
+}
+
+void afficherListeClients() {
+    printf("Nombre de Client %i \n\n", i);
+    for(int j = 0; j < i; j++){
+        printf("Client %i : CIN: %s \t Nom: %s \t Prenom: %s \t Montant: %f \n", j+1, datab[j].CIN, datab[j].nom, datab[j].prenom, datab[j].montant);
+    
+    }
+    
 }
  
 
@@ -81,8 +88,14 @@ menu :
         break;
 
     case 3 :
-    // listeclients.c / fonctions affichage;
+    afficherListeClients();
+        int menu ;
+        printf("saisissez un nombre retourner au menu");
+        scanf("%d", &menu);
+        system("cls");
+        goto menu;
         break;
+
     case 4 :
     // fonction de recherche;
      //infos de client +  printf("Quelle operations voulez-vous effectuer ?");

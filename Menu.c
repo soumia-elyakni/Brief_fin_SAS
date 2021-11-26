@@ -3,6 +3,8 @@
 #include <string.h>
 #include <windows.h>
 
+
+
 struct info_client{
   char CIN[9];
   char nom[30];
@@ -16,31 +18,33 @@ int i = 0;
 
  void ajouteruncmpte(){
 
-         struct info_client Clt ;
+    struct info_client Clt ;
 
-        printf("saisissez le numero du CIN : ");
-        scanf("%s", Clt.CIN);
 
-        printf("Saisissez le NOM : ");
-        scanf("%s", Clt.nom);
-        printf("Saisissez le Prenom : ");
-        scanf("%s", Clt.prenom);
+    printf("saisissez le numero du CIN : ");
+    scanf("%s", Clt.CIN);
 
-        printf("Saisissez le Montant initial : ");
-        scanf("%f", &Clt.montant);
+    printf("Saisissez le NOM : ");
+    scanf("%s", Clt.nom);
+    printf("Saisissez le Prenom : ");
+    scanf("%s", Clt.prenom);
 
-        datab[i] = Clt ;
-        i++;
- }
+    printf("Saisissez le Montant initial : ");
+    scanf("%f", &Clt.montant);
     
-void ajouterdescmptes(){
-         int i, nombre ;
+    datab[i] = Clt ;
+    
+    i++;
 
-        printf("Saisissez combien engistrer : ");
+}    
+
+void ajouterdescmptes(){
+        int j, nombre ;
+
+        printf("Saisissez combien a engistrer : ");
         scanf("%d", &nombre);
-        for(i = 0; i < nombre; i++){
+        for(j = 0; j < nombre; j++){
             ajouteruncmpte();
-            system("cls");
         }
          
 }
@@ -53,7 +57,27 @@ void afficherListeClients() {
     }
     
 }
+void recherche(){
+  char searchCIN[9];
+  int y;
+  printf(" Entrez le CIN du client a chercher: ");
+  scanf("%s", searchCIN);
+   for(int x = 0; x < i; x++){
+       if (strcmp(searchCIN,datab[x].CIN) == 0){y=x;}
+   
+   }
  
+   if (y < i){
+      printf(" le compte ayant ce numero de CIN est : \n");
+     printf("Client %i : CIN: %s \t Nom: %s \t Prenom: %s \t Montant: %f \n",y+1, datab[y].CIN, datab[y].nom, datab[y].prenom, datab[y].montant);
+   }
+    
+  else{
+   printf("  ce numero de CIN n'existe pas dans la base de donnees. \n");
+}   
+  
+   
+}
 
 int main(){
  
@@ -61,7 +85,7 @@ int choix;
 
 menu :
 
- printf("*******************Bienvenue sur le systeme bancaire******************** \n");
+ printf("******Bienvenue sur le Systeme Bancaire******* \n");
     
     printf("1-Ajouter un client\n");
     printf("2-Ajouter plusieurs clients\n");
@@ -76,34 +100,31 @@ menu :
     switch (choix)
     {
     case 1:
-             ajouteruncmpte();
+            ajouteruncmpte();
             system("cls");
             goto menu;
         break;
 
     case 2 :
-             ajouterdescmptes();
-           system("cls");
+            ajouterdescmptes();
+            system("cls");
             goto menu;
         break;
 
     case 3 :
-    afficherListeClients();
+        afficherListeClients();
         int menu ;
-        printf("saisissez un nombre retourner au menu");
+        printf("saisissez un nombre pour retourner au menu");
         scanf("%d", &menu);
         system("cls");
         goto menu;
         break;
-
     case 4 :
-    // fonction de recherche;
-     //infos de client +  printf("Quelle operations voulez-vous effectuer ?");
-        // printf("1-retrait"); 
-        // printf("2-depot"); 
-        // scanf("%d, choix retrait depot ");
-        // fonction d'operation;
-
+    recherche();
+      printf("saisissez un nombre pour retourner au menu");
+        scanf("%d", &menu);
+        system("cls");
+        goto menu;
         break;    
     case 5 : 
         // fonction fidélisation
